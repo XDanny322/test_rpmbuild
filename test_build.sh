@@ -33,11 +33,20 @@ echo $HOME
 
 ################################################################################
 # Update the salt-minion config file
-sed -i 's/^master:.*$/master: '"$SALT_MASTER"'/' SOURCES/minion.conf
+# sed -i 's/^master:.*$/master: '"$SALT_MASTER"'/' SOURCES/minion.conf
 
 ################################################################################
 # Build the RPM
 pwd
 cd $WORKSPACE
 pwd
-rpmbuild --define "_topdir $WORKSPACE" --define "name $RPM_NAME" --define "salt_version $SALT_VERSION" --define "version $FULL_VERSION" --define "release $BUILD_NUMBER%{?dist}" --define "salt_minion_config minion.conf" --define "salt_minion_service salt-minion.service.systemd" --define "logrotate_config salt.logrotate" --define "pip_version $PIP_VERSION" -ba -vv salt.rhel7.spec
+rpmbuild \
+  --define "_topdir $WORKSPACE"  \
+  --define "name $RPM_NAME"  \
+  --define "salt_version $SALT_VERSION"  \
+  --define "version $FULL_VERSION"  \
+  --define "release $BUILD_NUMBER%{?dist}"  \
+  --define "salt_minion_config minion.conf"  \
+  --define "salt_minion_service salt-minion.service.systemd"  \
+  --define "logrotate_config salt.logrotate"  \
+  --define "pip_version $PIP_VERSION" -ba -vv salt.rhel7.spec
