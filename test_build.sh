@@ -49,4 +49,4 @@ rpmbuild \
   --define "salt_minion_config minion.conf"  \
   --define "salt_minion_service salt-minion.service.systemd"  \
   --define "logrotate_config salt.logrotate"  \
-  --define "pip_version $PIP_VERSION" -ba -vv salt.rhel7.spec
+  --define "pip_version $PIP_VERSION" -ba -vv test_rpm.spec
