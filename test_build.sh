@@ -17,14 +17,13 @@ cat /etc/redhat-release
 rpm -q python
 df -h
 whoami
-echo $WORKSPACE
 
 ################################################################################
 # Prevent Python from including packages found in ~/.local, forcing them to
 #   come instead from $WORKSPACE/.local.  This will prevents Jenkins, e.g., from
 #   changing its behavior based on packages found in the ~/.local file of the
 #   user used for Jenkins builds.
-HOME=$WORKSPACE
+HOME=~
 echo $HOME
 
 ################################################################################
@@ -34,9 +33,9 @@ echo $HOME
 ################################################################################
 # Build the RPM
 pwd
-cd $WORKSPACE
+# cd $WORKSPACE
 pwd
 rpmbuild \
   --define "_topdir $WORKSPACE"  \
   --define "name $RPM_NAME"  \
-  --define "salt_version $SALT_VERSION" -ba -vv test_rpm.spec
+  --define "salt_version $SALT_VERSION" -ba -vv $WORKSPACE/test_rpm.spec
