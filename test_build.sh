@@ -7,9 +7,8 @@ set -e
 
 ################################################################################
 # Build variables
-SALT_VERSION=${SALT_VERSION:-'2017.7.2'}
-BUILD_NUMBER=${BUILD_NUMBER:-'SNAPSHOT'}
 RPM_NAME=${RPM_NAME:-'test_rpm'}
+version='2017.7.2'
 
 ################################################################################
 # Debug / information gathering
@@ -38,4 +37,4 @@ pwd
 rpmbuild \
   --define "_topdir $HOME"  \
   --define "name $RPM_NAME"  \
-  --define "salt_version $SALT_VERSION" -ba -vv $HOME/test_rpm.spec
+  --define "version $version" -ba -vv $HOME/test_rpm.spec
