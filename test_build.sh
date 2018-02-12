@@ -23,7 +23,7 @@ whoami
 #   come instead from $WORKSPACE/.local.  This will prevents Jenkins, e.g., from
 #   changing its behavior based on packages found in the ~/.local file of the
 #   user used for Jenkins builds.
-HOME=~
+HOME=/home/vagrant/test_rpmbuild
 echo $HOME
 
 ################################################################################
@@ -36,6 +36,6 @@ pwd
 # cd $WORKSPACE
 pwd
 rpmbuild \
-  --define "_topdir $WORKSPACE"  \
+  --define "_topdir $HOME"  \
   --define "name $RPM_NAME"  \
-  --define "salt_version $SALT_VERSION" -ba -vv $WORKSPACE/test_rpm.spec
+  --define "salt_version $SALT_VERSION" -ba -vv $HOME/test_rpm.spec
