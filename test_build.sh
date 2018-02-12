@@ -7,8 +7,9 @@ set -e
 
 ################################################################################
 # Build variables
-RPM_NAME=${RPM_NAME:-'test_rpm'}
+RPM_NAME=test_rpm1
 version='2017.7.2'
+release='1.1'
 
 ################################################################################
 # Debug / information gathering
@@ -31,10 +32,8 @@ echo $HOME
 
 ################################################################################
 # Build the RPM
-pwd
-# cd $WORKSPACE
-pwd
 rpmbuild \
   --define "_topdir $HOME"  \
   --define "name $RPM_NAME"  \
+  --define "release $release"  \
   --define "version $version" -ba -vv $HOME/test_rpm.spec

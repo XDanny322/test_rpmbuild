@@ -6,15 +6,15 @@
 %define        __os_install_post %{_dbpath}/brp-compress
 
 Summary: A very simple toy bin rpm package
-Name: testrpm
-Version: 1.0
-Release: 1
+Name: %{name}
+Version: %{version}
+Release: %{release}
 License: GPL+
 Group: Development/Tools
 SOURCE0 : %{name}-%{version}.tar.gz
 URL: http://testrpm.company.com/
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
 
 %description
 %{summary}
