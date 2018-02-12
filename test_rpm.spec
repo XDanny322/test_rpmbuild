@@ -5,13 +5,13 @@
 %define          debug_package %{nil}
 %define        __os_install_post %{_dbpath}/brp-compress
 
-Summary: A very simple toy bin rpm package
+Summary: A very rpm package
 Name: %{name}
 Version: %{version}
 Release: %{release}
 License: GPL+
 Group: Development/Tools
-SOURCE0 : %{name}-%{version}.tar.gz
+SOURCE0 : %{name}-%{version}.conf
 URL: http://testrpm.company.com/
 
 BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
@@ -20,7 +20,9 @@ BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
 %{summary}
 
 %prep
-%setup -q
+# Don't use the setup macro anymore, replace it with typed-out commands
+# https://serverfault.com/a/805721
+# %setup -q
 
 %build
 # Empty section.
