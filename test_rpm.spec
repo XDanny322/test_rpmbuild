@@ -1,21 +1,12 @@
 # http://ftp.rpm.org/max-rpm/s1-rpm-build-creating-spec-file.html
 
-# Don't try fancy stuff like debuginfo, which is useless on binary-only
-# packages. Don't strip binary too
-# Be sure buildpolicy set to do nothing
-
-# Commenting out for now, not sure what it goes
-# %define        __spec_install_post %{nil}
-# %define          debug_package %{nil}
-# %define        __os_install_post %{_dbpath}/brp-compress
-
-Summary: A very rpm package
+Summary: A very simply rpm package
 Name: %{name}
 Version: %{version}
 Release: %{release}
 License: GPL+
 Group: Development/Tools
-SOURCE0 : %{name}-%{version}.conf
+# SOURCE0: %{name}-%{version}.conf
 URL: http://testrpm.company.com/
 
 BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
@@ -43,15 +34,15 @@ BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
 
 %configure
 echo "~~~~~~~~~~~~~~configure~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Preping -configure-"
 
 %install
 echo "~~~~~~~~~~~~~~install~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-echo "Preping -install-"
 echo "buildroot= %{buildroot}"
 echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm1-2017.7.2-1.1.x86_64
 echo "RPM_BUILD_DIR = $RPM_BUILD_DIR"   # /home/vagrant/test_rpmbuild/BUILD
 echo "pwd = `pwd`"
+
+install -d -m 0750 $RPM_BUILD_ROOT/tmp/test.conf
 
 # Moving the stuff into dir ready for packaging
 # touch $RPM_BUILD_DIR/test.txt
@@ -68,8 +59,7 @@ echo "pwd = `pwd`"
 %files
 # echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 %defattr(-,root,root,-)
-/tmp/%{name}.conf
-/tmp/%{name}
+/tmp/test.conf
 # %config(noreplace) %{_sysconfdir}/%{name}/%{name}.conf
 # %{_bindir}/*
 
