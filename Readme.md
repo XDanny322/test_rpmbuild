@@ -1,3 +1,3 @@
-Test RPM Build repo
+# Test RPM Build repo
 
-This repo was created to host a test project, of building an RPM using Jenkins.
+This repo was created to host a test project, for building an RPM using Jenkins.

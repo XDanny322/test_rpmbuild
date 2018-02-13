@@ -10,23 +10,11 @@ Group: Development/Tools
 # SOURCE0: %{name}-%{version}.conf
 URL: http://testrpm.company.com/
 
+# I think this is no longer being used.
 # BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
-
 
 %description
 %{summary}
-
-# As part of the bild, rpmbuild will auto cd into the RPM_BUILD_ROOT
-# and clean up
-
-# %prep
-# %setup basically turns into a ton of commands:
-# http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html
-# %setup -q
-
-# %build
-# Section to does the actua building; IE, make.
-# Empty section.
 
 %configure
 echo "~~~~~~~~~~~~~~configure~~~~~~~~~~~~~~~~~~~~~~~~~~~"
