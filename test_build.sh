@@ -13,10 +13,10 @@ release='1.1'
 
 ################################################################################
 # Debug / information gathering
-cat /etc/redhat-release
-rpm -q python
-df -h
-whoami
+# cat /etc/redhat-release
+# rpm -q python
+# df -h
+# whoami
 
 ################################################################################
 # Prevent Python from including packages found in ~/.local, forcing them to
@@ -25,10 +25,6 @@ whoami
 #   user used for Jenkins builds.
 HOME=/home/vagrant/test_rpmbuild
 echo $HOME
-
-################################################################################
-# Update the salt-minion config file
-# sed -i 's/^master:.*$/master: '"$SALT_MASTER"'/' SOURCES/minion.conf
 
 ################################################################################
 # Build the RPM
