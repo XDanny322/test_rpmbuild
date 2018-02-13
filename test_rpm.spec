@@ -51,8 +51,8 @@ install -d -m 0750 $RPM_BUILD_ROOT/tmp/test
 
 echo "pwd = `pwd`"
 
-cp -vp test.conf $RPM_BUILD_ROOT/tmp/test/test.conf
-cp -vp test.sh   $RPM_BUILD_ROOT/tmp/test/test.sh
+cp -vp %{_sourcedir}/test.conf $RPM_BUILD_ROOT/tmp/test/test.conf
+cp -vp %{_sourcedir}/test.sh   $RPM_BUILD_ROOT/tmp/test/test.sh
 
 %clean
 # rm -rf $RPM_BUILD_ROOT
