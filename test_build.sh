@@ -25,14 +25,12 @@ release='1.1'
 #   user used for Jenkins builds.
 # HOME=/home/vagrant/test_rpmbuild
 # echo $HOME
-echo "Default _topdir" _topdir
-echo "Default $ _topdir" $_topdir
 
 
+# --define "_topdir $HOME"  \
 ################################################################################
 # Build the RPM
 rpmbuild \
-  --define "_topdir $HOME"  \
   --define "name $RPM_NAME"  \
   --define "release $release"  \
   --define "version $version" -ba -vv $HOME/test_rpm.spec
