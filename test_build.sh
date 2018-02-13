@@ -34,4 +34,4 @@ release='1.1'
 rpmbuild \
   --define "name $RPM_NAME"  \
   --define "release $release"  \
-  --define "version $version" -ba -vv $HOME/workspace/TestProjecttest_rpm.spec
+  --define "version $version" -ba -vv $HOME/workspace/TestProject/test_rpm.spec
