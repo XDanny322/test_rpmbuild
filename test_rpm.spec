@@ -8,7 +8,7 @@ License: GPL+
 Group: Development/Tools
 # I think, this is used to ensure files are avaiable as SOURCE
 # SOURCE0: %{name}-%{version}.conf
-URL: http://testrpm.company.com/
+URL: http://test_rpm.company.com/
 
 # I think this is no longer being used.
 # BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
@@ -40,7 +40,7 @@ echo "_specdir      = %{_specdir}"
 echo "_srcrpmdir    = %{_srcrpmdir}"
 echo "_buildrootdir = %{_buildrootdir}"
 
-echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm1-2017.7.2-1.1.x86_64
+echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm-2017.7.2-1.1.x86_64
 echo "RPM_BUILD_DIR = $RPM_BUILD_DIR"   # /home/vagrant/test_rpmbuild/BUILD
 
 echo "pwd = `pwd`"

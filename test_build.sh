@@ -7,7 +7,7 @@ set -e
 
 ################################################################################
 # Build variables
-RPM_NAME=test_rpm1
+RPM_NAME=test_rpm
 version='2017.7.2'
 release='1.1'
 
