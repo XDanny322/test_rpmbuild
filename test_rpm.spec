@@ -34,9 +34,17 @@ echo "~~~~~~~~~~~~~~configure~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo "~~~~~~~~~~~~~~install~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
 echo "Some Debug info"
-echo "buildroot= %{buildroot}"
+echo "topdir        = %{_topdir}"       # %{getenv:HOME}/rpmbuild
+echo "buildroot     = %{buildroot}"
+echo "_rpmdir       = %{_rpmdir}"
+echo "_sourcedir    = %{_sourcedir}"
+echo "_specdir      = %{_specdir}"
+echo "_srcrpmdir    = %{_srcrpmdir}"
+echo "_buildrootdir = %{_buildrootdir}"
+
 echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm1-2017.7.2-1.1.x86_64
 echo "RPM_BUILD_DIR = $RPM_BUILD_DIR"   # /home/vagrant/test_rpmbuild/BUILD
+
 echo "pwd = `pwd`"
 
 install -d -m 0750 $RPM_BUILD_ROOT/tmp/test
