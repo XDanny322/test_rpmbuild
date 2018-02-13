@@ -10,7 +10,7 @@ Group: Development/Tools
 # SOURCE0: %{name}-%{version}.conf
 URL: http://testrpm.company.com/
 
-BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
+# BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
 
 %description
 %{summary}

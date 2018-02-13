@@ -32,6 +32,7 @@ release='1.1'
 ################################################################################
 # Build the RPM
 rpmbuild \
+  --define "_topdir /var/lib/jenkins/workspace/TestProject"  \
   --define "name $RPM_NAME"  \
   --define "release $release"  \
   --define "version $version" -ba -vv $HOME/workspace/TestProject/test_rpm.spec
