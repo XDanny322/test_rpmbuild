@@ -12,6 +12,7 @@ URL: http://testrpm.company.com/
 
 # BuildRoot:  %{_topdir}/%{name}-%{version}-%{release}-buildroot
 
+
 %description
 %{summary}
 
@@ -44,12 +45,14 @@ echo "_buildrootdir = %{_buildrootdir}"
 
 echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm1-2017.7.2-1.1.x86_64
 echo "RPM_BUILD_DIR = $RPM_BUILD_DIR"   # /home/vagrant/test_rpmbuild/BUILD
-
 echo "pwd = `pwd`"
 
 install -d -m 0750 $RPM_BUILD_ROOT/tmp/test
-cp -vp SOURCES/test.conf $RPM_BUILD_ROOT/tmp/test/test.conf
-cp -vp SOURCES/test.sh   $RPM_BUILD_ROOT/tmp/test/test.sh
+
+echo "pwd = `pwd`"
+
+cp -vp test.conf $RPM_BUILD_ROOT/tmp/test/test.conf
+cp -vp test.sh   $RPM_BUILD_ROOT/tmp/test/test.sh
 
 %clean
 # rm -rf $RPM_BUILD_ROOT
