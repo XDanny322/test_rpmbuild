@@ -26,11 +26,12 @@ release='1.1'
 # HOME=/home/vagrant/test_rpmbuild
 # echo $HOME
 
-
-# --define "_topdir $HOME"  \
+# Special dir
+# _topdir = /var/lib/jenkins
+# You can overwrite it like so, in the RPMBUILD line: --define "_topdir $HOME"  \
 ################################################################################
 # Build the RPM
 rpmbuild \
   --define "name $RPM_NAME"  \
   --define "release $release"  \
-  --define "version $version" -ba -vv $HOME/test_rpm.spec
+  --define "version $version" -ba -vv $HOME/workspace/TestProjecttest_rpm.spec
