@@ -16,6 +16,15 @@ URL: http://testrpm.company.com/
 %description
 %{summary}
 
+# %prep
+#  %setup basically turns into a ton of commands:
+#  http://ftp.rpm.org/max-rpm/s1-rpm-inside-macros.html
+#  %setup -q
+
+# %build
+#  Section to does the actua building; IE, make.
+#  Empty section.
+
 %configure
 echo "~~~~~~~~~~~~~~configure~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
@@ -33,12 +42,11 @@ echo "_buildrootdir = %{_buildrootdir}"
 
 echo "RPM_BUILD_ROOT= $RPM_BUILD_ROOT"  # /home/vagrant/test_rpmbuild/BUILDROOT/test_rpm1-2017.7.2-1.1.x86_64
 echo "RPM_BUILD_DIR = $RPM_BUILD_DIR"   # /home/vagrant/test_rpmbuild/BUILD
+
 echo "pwd = `pwd`"
 
+# Starting the install; Gluing the RPM together
 install -d -m 0750 $RPM_BUILD_ROOT/tmp/test
-
-echo "pwd = `pwd`"
-
 cp -vp %{_sourcedir}/test.conf $RPM_BUILD_ROOT/tmp/test/test.conf
 cp -vp %{_sourcedir}/test.sh   $RPM_BUILD_ROOT/tmp/test/test.sh
 
