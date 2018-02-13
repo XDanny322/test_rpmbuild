@@ -11,6 +11,7 @@ To test usage this repo
 
 1. Spin up a Jenkins Instance, like in your vagrant set.
 2. Ensure RPMs are installed
+   * git (to connect to git)
    * rpm-build
    * rpmdevtools  (Optional)
    * rpm-build  (Optional)
