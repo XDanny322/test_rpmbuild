@@ -9,14 +9,13 @@ Also, the spec file (`test_rpm.spec`) is utilizing very little of a spec file's 
 
 To test usage this repo
 
-* Spin up a Jenkins Instance, like in your vagrant set.
-* Ensure RPMs are installed
+1. Spin up a Jenkins Instance, like in your vagrant set.
+2. Ensure RPMs are installed
    * rpm-build
    * rpmdevtools  (Optional)
    * rpm-build  (Optional)
    * rpmlint  (Optional)
-
-* Within Jenkins:
+3. Within Jenkins:
    * Setup a _FreeStype_ Project
    * Enable GIthub Project. Point it to this Git Repo
    * Under `Build`
