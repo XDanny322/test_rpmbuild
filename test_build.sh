@@ -23,8 +23,11 @@ release='1.1'
 #   come instead from $WORKSPACE/.local.  This will prevents Jenkins, e.g., from
 #   changing its behavior based on packages found in the ~/.local file of the
 #   user used for Jenkins builds.
-HOME=/home/vagrant/test_rpmbuild
-echo $HOME
+# HOME=/home/vagrant/test_rpmbuild
+# echo $HOME
+echo "Default _topdir" _topdir
+echo "Default $ _topdir" $_topdir
+
 
 ################################################################################
 # Build the RPM
